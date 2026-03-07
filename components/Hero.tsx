@@ -22,23 +22,22 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="min-h-screen bg-white text-black flex flex-col items-center justify-between py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen w-full overflow-hidden bg-white text-black flex flex-col items-center justify-between py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8">
 
       {/* Header */}
       <header
         className={`
-          w-full flex items-center justify-between max-w-7xl mx-auto mb-8 sm:mb-10 md:mb-12
+          w-full flex items-center justify-between max-w-7xl mx-auto
           transition-all duration-1000 ease-out
           ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}
         `}
       >
-        <div className="text-xs sm:text-sm md:text-md font-light tracking-widest">
+        <div className="text-xs sm:text-sm font-light tracking-widest">
           Dyal Thakur
         </div>
-        <Cloud size={20} className="text-black sm:w-6 sm:h-6" />
-        {/* Desktop menu label / Mobile hamburger */}
+        <Cloud size={18} className="text-black" />
         <button
-          className="text-xs sm:text-sm md:text-md font-light tracking-widest hover:opacity-60 transition-opacity"
+          className="text-xs sm:text-sm font-light tracking-widest hover:opacity-60 transition-opacity"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -51,11 +50,11 @@ export default function Hero() {
         <div className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-10">
           <button
             onClick={() => setMenuOpen(false)}
-            className="absolute top-10 right-6 text-xs tracking-widest font-light"
+            className="absolute top-8 right-6 text-xs tracking-widest font-light"
           >
             CLOSE
           </button>
-          {['PORTFOLIO', 'CONTACT', 'SHOP'].map((item) => (
+          {['PORTFOLIO', 'CONTACT', 'Marketing'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -69,51 +68,49 @@ export default function Hero() {
       )}
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center w-full max-w-5xl px-2">
-        <div className="text-center">
-          <h1 className="
-            text-4xl
-            sm:text-5xl
-            md:text-6xl
-            lg:text-7xl
-            xl:text-8xl
-            font-light tracking-tight leading-tight sm:leading-snug
-          ">
+      <div className="flex-1 flex flex-col items-center justify-center w-full max-w-5xl">
+        <div className="w-full text-center px-2">
+          <h1 className="font-light tracking-tight leading-tight">
+
             {/* Line 1 */}
             <span
               className={`
-                flex items-center justify-center gap-2 sm:gap-3 flex-wrap
+                flex items-center justify-center gap-2 sm:gap-3
+                text-[clamp(1.75rem,8vw,5rem)]
                 transition-all duration-1000 ease-out delay-200
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
               `}
             >
               VIDEO EDITOR
-              <span className="w-8 sm:w-12 md:w-16 h-0.5 bg-black inline-block align-middle"></span>
+              <span className="w-6 sm:w-10 md:w-14 h-px bg-black inline-block align-middle shrink-0"></span>
             </span>
 
             {/* Line 2 */}
             <span
               className={`
-                flex items-center justify-center gap-2 sm:gap-3 flex-wrap
+                flex items-center justify-center gap-2 sm:gap-3
+                text-[clamp(1.75rem,8vw,5rem)]
                 transition-all duration-1000 ease-out delay-[400ms]
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
               `}
             >
-              <span className="w-8 sm:w-12 md:w-16 h-0.5 bg-black inline-block align-middle"></span>
+              <span className="w-6 sm:w-10 md:w-14 h-px bg-black inline-block align-middle shrink-0"></span>
               MOTION DESIGNER
             </span>
 
             {/* Line 3 */}
             <span
               className={`
-                flex items-center justify-center gap-2 sm:gap-3 flex-wrap
+                flex items-center justify-center gap-2 sm:gap-3
+                text-[clamp(1.75rem,8vw,5rem)]
                 transition-all duration-1000 ease-out delay-[600ms]
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
               `}
             >
-              <span className="w-8 sm:w-12 md:w-16 h-0.5 bg-black inline-block align-middle"></span>
+              <span className="w-6 sm:w-10 md:w-14 h-px bg-black inline-block align-middle shrink-0"></span>
               STORYTELLER
             </span>
+
           </h1>
         </div>
       </div>
@@ -121,9 +118,8 @@ export default function Hero() {
       {/* Footer Navigation */}
       <nav
         className={`
-          w-full flex items-center justify-center sm:justify-between
-          gap-6 sm:gap-0
-          max-w-7xl mx-auto mt-8 sm:mt-0
+          w-full flex items-center justify-between
+          max-w-7xl mx-auto
           transition-all duration-1000 ease-out delay-[800ms]
           ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
         `}
@@ -131,7 +127,7 @@ export default function Hero() {
         {[
           { label: 'PORTFOLIO', href: '#portfolio' },
           { label: 'CONTACT', href: '#contact' },
-          { label: 'SHOP', href: '#shop' },
+          { label: 'Marketing', href: '#Marketing' },
         ].map(({ label, href }) => (
           <a
             key={label}

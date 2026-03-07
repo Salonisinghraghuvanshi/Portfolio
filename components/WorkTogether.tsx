@@ -1,8 +1,8 @@
 'use client'
 
 export default function WorkTogether() {
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '1234567890'
-  const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}`
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '7018968973'
+  const whatsappLink = `https://api.whatsapp.com/send/?phone=%2B917018968973&text&type=phone_number&app_absent=0`
 
   return (
     <section className="relative w-full bg-black text-white min-h-screen flex flex-col items-center justify-center py-20 sm:py-28 md:py-32 px-4 sm:px-6 overflow-hidden">
