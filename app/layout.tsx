@@ -9,7 +9,7 @@ import { ThemeProvider } from '@/context/ThemeContext'
 // const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Dyal Swaroop | Creative Growth Strategist & Video Editor',
+  title: 'Dyal Thakur | Creative Growth Strategist & Video Editor',
   description: 'Creative Growth Strategist, Video Editor, and Data Analyst helping brands grow through data-driven marketing, storytelling, and high-retention video content.',
   generator: 'v0.app',
 }

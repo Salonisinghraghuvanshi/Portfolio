@@ -1,119 +1,337 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
+
+const education = [
+  {
+    degree: 'Master of Computer Applications (MCA)',
+    school: 'Himachal Pradesh Technical University (HPTU)',
+    period: '2022 – 2024',
+    cgpa: '7.14',
+    accent: '#FF2020',
+  },
+  {
+    degree: 'Bachelor of Science (B.Sc) in Mathematics',
+    school: 'Himachal Pradesh University (HPU)',
+    period: '2019 – 2022',
+    cgpa: '8.18',
+    accent: '#0A66C2',
+  },
+]
+
+const mentorship = [
+  { label: 'Python for data analysis', accent: '#FF2020' },
+  { label: 'Machine learning fundamentals', accent: '#E1306C' },
+  { label: 'Data visualization', accent: '#0A66C2' },
+  { label: 'Analytical problem solving', accent: '#FF2020' },
+]
 
 export default function Education() {
-  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 6000)
-    return () => clearTimeout(timer)
+    const el = sectionRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) { el.classList.add('is-visible'); observer.disconnect() }
+      },
+      { threshold: 0.1 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
   }, [])
 
-  const education = [
-    {
-      degree: 'Master of Computer Applications (MCA)',
-      school: 'Himachal Pradesh Technical University (HPTU)',
-      period: '2022 – 2024',
-      cgpa: 'CGPA: 7.14',
-      highlight: true
-    },
-    {
-      degree: 'Bachelor of Science (B.Sc) in Mathematics',
-      school: 'Himachal Pradesh University (HPU)',
-      period: '2019 – 2022',
-      cgpa: 'CGPA: 8.18'
-    }
-  ]
-
-  const mentorship = [
-    'Python for data analysis',
-    'Machine learning fundamentals',
-    'Data visualization',
-    'Analytical problem solving'
-  ]
-
   return (
-    <section className="w-full min-h-screen bg-black dark:bg-white text-white dark:text-black py-20 sm:py-24 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Title */}
-        <div
-          className={`mb-16 sm:mb-20 md:mb-24 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
-            EDUCATION
-          </h2>
-          <p className="text-gray-400 dark:text-gray-600 font-light text-base sm:text-lg mt-4 sm:mt-6 max-w-2xl">
-            I have a strong academic background in mathematics, technology, and data analysis, which supports my analytical and strategic thinking.
-          </p>
-        </div>
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');`}</style>
 
-        {/* Degrees */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-16 sm:mb-20 md:mb-24">
-          {education.map((edu, index) => (
-            <div
-              key={index}
-              className={`group transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className={`relative p-6 sm:p-8 border border-gray-600 dark:border-gray-400 rounded-lg hover:border-white dark:hover:border-black transition-all duration-500 ${edu.highlight ? 'border-l-4 border-l-white dark:border-l-black' : ''}`}>
-                <div className="absolute top-0 left-0 w-0 h-px bg-white dark:bg-black group-hover:w-6 transition-all duration-500"></div>
-                <h3 className="text-lg sm:text-xl font-light tracking-tight mb-2 group-hover:text-gray-200 dark:group-hover:text-gray-800 transition-colors duration-300">
-                  {edu.degree}
-                </h3>
-                <p className="text-gray-300 dark:text-gray-700 font-light text-sm sm:text-base mb-3 group-hover:text-gray-100 dark:group-hover:text-gray-600 transition-colors duration-300">
-                  {edu.school}
-                </p>
-                <div className="flex flex-col gap-2 text-gray-400 dark:text-gray-600 font-light text-sm group-hover:text-gray-300 dark:group-hover:text-gray-500 transition-colors duration-300">
-                  <span>{edu.period}</span>
-                  <span className={`${edu.highlight ? 'font-normal text-white dark:text-black' : ''}`}>{edu.cgpa}</span>
-                </div>
-              </div>
+      <section className="edu-root" ref={sectionRef}>
+        <div className="edu-orb o1" />
+        <div className="edu-orb o2" />
+        <div className="edu-orb o3" />
+        <div className="edu-grain" />
+
+        <div className="edu-wrap">
+
+          {/* ── HEADER ── */}
+          <header className="edu-header">
+            <div className="edu-eyebrow">
+              <span className="edu-dot" />
+              Background
             </div>
-          ))}
-        </div>
-
-        {/* Mentorship */}
-        <div
-          className={`border-t border-gray-700 dark:border-gray-300 pt-12 sm:pt-16 md:pt-20 transition-all duration-1000 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <div className="mb-8 sm:mb-10">
-            <h3 className="text-2xl sm:text-3xl font-light tracking-tight">
-              Data Science Mentorship Program (2024)
-            </h3>
-            <p className="text-gray-400 dark:text-gray-600 font-light text-sm sm:text-base mt-3 sm:mt-4">
-              Where I studied:
+            <h2 className="edu-title">Education</h2>
+            <p className="edu-sub">
+              A strong academic foundation in mathematics, technology, and data
+              analysis — fuelling analytical and strategic thinking.
             </p>
-          </div>
+          </header>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-            {mentorship.map((item, index) => (
+          {/* ── DEGREE CARDS ── */}
+          <div className="edu-grid">
+            {education.map((edu, i) => (
               <div
-                key={index}
-                className={`flex items-start gap-3 transition-all duration-1000 ${
-                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-                }`}
-                style={{ transitionDelay: `${(index + 2) * 100}ms` }}
+                key={i}
+                className="edu-card"
+                style={{ '--ac': edu.accent, animationDelay: `${i * 0.12}s` } as React.CSSProperties}
               >
-                <span className="text-white dark:text-black mt-1 flex-shrink-0">•</span>
-                <p className="text-gray-300 dark:text-gray-700 font-light text-base">
-                  {item}
-                </p>
+                <div className="edu-ring" />
+                <div className="edu-ring r2" />
+
+                <span className="edu-accent-dot" style={{ background: edu.accent }} />
+
+                {/* CGPA big number */}
+                <div className="edu-cgpa">{edu.cgpa}</div>
+                <div className="edu-cgpa-label">CGPA</div>
+
+                <div className="edu-card-divider" />
+
+                <h3 className="edu-degree">{edu.degree}</h3>
+                <p className="edu-school">{edu.school}</p>
+
+                <div className="edu-chips">
+                  <span className="edu-chip">{edu.period}</span>
+                </div>
               </div>
             ))}
           </div>
 
-          <p className="text-gray-400 dark:text-gray-600 font-light text-base sm:text-lg mt-8 sm:mt-10 md:mt-12">
-            This combination of technical education and creative skills allows me to approach digital marketing and content creation in a unique way.
-          </p>
+          {/* ── MENTORSHIP ── */}
+          <div className="edu-mentorship">
+            <div className="edu-section-label">
+              <span className="edu-dot" />
+              Mentorship
+            </div>
+
+            <h3 className="edu-mentor-title">
+              Data Science Mentorship Program
+              <span className="edu-mentor-year"> 2024</span>
+            </h3>
+            <p className="edu-mentor-sub">Topics covered:</p>
+
+            <div className="edu-mentor-grid">
+              {mentorship.map((item, i) => (
+                <div
+                  key={i}
+                  className="edu-mentor-card"
+                  style={{ '--ac': item.accent, animationDelay: `${0.08 + i * 0.1}s` } as React.CSSProperties}
+                >
+                  <div className="edu-ring" />
+                  <span className="edu-accent-dot" style={{ background: item.accent }} />
+                  <p className="edu-mentor-label">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── SUMMARY ── */}
+          <div className="edu-summary">
+            <p>
+              This combination of technical education and creative skills allows me
+              to approach digital marketing and content creation in a uniquely
+              analytical way.
+            </p>
+          </div>
+
         </div>
-      </div>
-    </section>
+
+        <style>{css}</style>
+      </section>
+    </>
   )
 }
+
+const css = `
+  .edu-root {
+    --bg:      #07090e;
+    --surface: #0d1017;
+    --border:  rgba(255,255,255,0.07);
+    --text:    #edf0f7;
+    --muted:   rgba(237,240,247,0.42);
+    --faint:   rgba(237,240,247,0.15);
+    --fd: 'Syne', sans-serif;
+    --fb: 'DM Sans', sans-serif;
+    --r: 22px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--fb);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* grain */
+  .edu-grain {
+    position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* orbs */
+  .edu-orb { position:fixed;border-radius:50%;filter:blur(110px);pointer-events:none;z-index:0; }
+  .edu-root .o1 { width:600px;height:600px;background:rgba(255,32,32,.055);top:-150px;right:-150px;animation:edu-drift 22s ease-in-out infinite alternate; }
+  .edu-root .o2 { width:500px;height:500px;background:rgba(10,102,194,.065);bottom:-100px;left:-100px;animation:edu-drift 28s ease-in-out infinite alternate-reverse; }
+  .edu-root .o3 { width:320px;height:320px;background:rgba(225,48,108,.04);top:45%;left:42%;animation:edu-drift 18s ease-in-out infinite alternate; }
+  @keyframes edu-drift { from{transform:translate(0,0)scale(1)} to{transform:translate(35px,25px)scale(1.06)} }
+
+  /* layout */
+  .edu-wrap {
+    position:relative;z-index:1;
+    max-width:1100px;margin:0 auto;
+    padding:80px 22px 100px;
+    display:flex;flex-direction:column;gap:64px;
+  }
+
+  /* ── header ── */
+  .edu-header {
+    opacity:0;transform:translateY(28px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+  .is-visible .edu-header { opacity:1;transform:none; }
+
+  .edu-eyebrow {
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+    background:rgba(255,255,255,.04);border:1px solid var(--border);
+    padding:6px 16px;border-radius:100px;margin-bottom:26px;
+  }
+  .edu-dot {
+    width:6px;height:6px;background:#4ade80;border-radius:50%;
+    animation:edu-blink 2.4s ease infinite;display:inline-block;
+  }
+  @keyframes edu-blink { 0%,100%{opacity:1}50%{opacity:.2} }
+
+  .edu-title {
+    font-family:var(--fd);
+    font-size:clamp(3rem,8vw,5.5rem);
+    font-weight:800;letter-spacing:-.04em;line-height:.93;
+    margin-bottom:22px;
+    background:linear-gradient(140deg,#fff 35%,rgba(255,255,255,.38));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+  .edu-sub {
+    font-size:15px;color:var(--muted);font-weight:300;line-height:1.7;
+    max-width:520px;margin:0;
+  }
+
+  /* ── degree cards ── */
+  .edu-grid {
+    display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+    opacity:0;transform:translateY(20px);
+    transition:opacity .8s .1s ease, transform .8s .1s ease;
+  }
+  .is-visible .edu-grid { opacity:1;transform:none; }
+
+  .edu-card {
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+    padding:28px;display:flex;flex-direction:column;
+    position:relative;overflow:hidden;
+    transition:transform .32s cubic-bezier(.34,1.56,.64,1), border-color .28s, box-shadow .28s;
+    animation:edu-fadeUp .7s ease both;
+  }
+  .edu-card::before {
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at 80% 0%, color-mix(in srgb, var(--ac) 9%, transparent) 0%, transparent 68%);
+    opacity:0;transition:opacity .35s;pointer-events:none;border-radius:inherit;
+  }
+  .edu-card:hover { transform:translateY(-7px);border-color:var(--ac);box-shadow:0 28px 72px rgba(0,0,0,.55); }
+  .edu-card:hover::before { opacity:1; }
+  @keyframes edu-fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+
+  .edu-ring {
+    position:absolute;bottom:-56px;right:-56px;width:170px;height:170px;
+    border-radius:50%;border:1px solid var(--ac,rgba(255,255,255,.08));opacity:.09;pointer-events:none;
+  }
+  .edu-ring.r2 { bottom:-88px;right:-88px;width:230px;height:230px;opacity:.04; }
+
+  .edu-accent-dot {
+    width:8px;height:8px;border-radius:50%;display:inline-block;margin-bottom:14px;
+  }
+  .edu-cgpa {
+    font-family:var(--fd);font-size:3.2rem;font-weight:800;
+    letter-spacing:-.05em;color:var(--ac);line-height:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .edu-cgpa-label {
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);margin-top:2px;
+  }
+  .edu-card-divider { height:1px;background:var(--border);margin:18px 0; }
+  .edu-degree {
+    font-family:var(--fd);font-size:17px;font-weight:700;
+    letter-spacing:-.02em;margin-bottom:6px;line-height:1.3;
+  }
+  .edu-school { font-size:12px;color:var(--muted);margin:0; }
+  .edu-chips { display:flex;gap:8px;margin-top:14px;flex-wrap:wrap; }
+  .edu-chip {
+    font-size:11px;color:var(--muted);
+    background:rgba(255,255,255,.04);border:1px solid var(--border);
+    padding:3px 10px;border-radius:100px;
+  }
+
+  /* ── mentorship ── */
+  .edu-mentorship {
+    opacity:0;transform:translateY(20px);
+    transition:opacity .8s .15s ease, transform .8s .15s ease;
+  }
+  .is-visible .edu-mentorship { opacity:1;transform:none; }
+
+  .edu-section-label {
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+    background:rgba(255,255,255,.04);border:1px solid var(--border);
+    padding:6px 16px;border-radius:100px;margin-bottom:24px;
+  }
+  .edu-mentor-title {
+    font-family:var(--fd);font-size:clamp(1.6rem,3.5vw,2.4rem);
+    font-weight:700;letter-spacing:-.03em;margin-bottom:6px;
+  }
+  .edu-mentor-year {
+    font-family:var(--fd);font-size:.75em;
+    color:var(--muted);font-weight:400;margin-left:4px;
+  }
+  .edu-mentor-sub {
+    font-size:13px;color:var(--muted);margin-bottom:20px;font-weight:300;
+  }
+
+  .edu-mentor-grid {
+    display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  }
+
+  .edu-mentor-card {
+    background:var(--surface);border:1px solid var(--border);border-radius:16px;
+    padding:20px;position:relative;overflow:hidden;
+    transition:transform .32s cubic-bezier(.34,1.56,.64,1), border-color .28s, box-shadow .28s;
+    animation:edu-fadeUp .7s ease both;
+  }
+  .edu-mentor-card::before {
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at 80% 0%, color-mix(in srgb, var(--ac) 9%, transparent) 0%, transparent 68%);
+    opacity:0;transition:opacity .35s;pointer-events:none;border-radius:inherit;
+  }
+  .edu-mentor-card:hover { transform:translateY(-5px);border-color:var(--ac);box-shadow:0 20px 50px rgba(0,0,0,.5); }
+  .edu-mentor-card:hover::before { opacity:1; }
+
+  .edu-mentor-label {
+    font-size:13px;color:var(--text);font-weight:400;line-height:1.5;margin:8px 0 0;
+  }
+
+  /* ── summary ── */
+  .edu-summary {
+    border-top:1px solid var(--border);padding-top:40px;
+    opacity:0;transition:opacity .8s .2s ease;
+  }
+  .is-visible .edu-summary { opacity:1; }
+  .edu-summary p {
+    font-size:15px;color:var(--muted);font-weight:300;line-height:1.7;
+    max-width:600px;margin:0;
+  }
+
+  /* ── responsive ── */
+  @media(max-width:760px) {
+    .edu-grid { grid-template-columns:1fr; }
+    .edu-mentor-grid { grid-template-columns:repeat(2,1fr); }
+  }
+  @media(max-width:460px) {
+    .edu-mentor-grid { grid-template-columns:1fr; }
+  }
+`
