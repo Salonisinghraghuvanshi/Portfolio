@@ -1,12 +1,19 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Cloud } from 'lucide-react'
+import { Cloud, Moon, Sun } from 'lucide-react'
+import { useTheme } from '@/context/ThemeContext'
 
 export default function Hero() {
+  const { theme, toggleTheme } = useTheme()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +28,10 @@ export default function Hero() {
     return () => clearTimeout(timer)
   }, [])
 
+  if (!mounted) return null
+
   return (
-    <section className="min-h-screen w-full overflow-hidden bg-white text-black flex flex-col items-center justify-between py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen w-full overflow-hidden bg-white dark:bg-black text-black dark:text-white flex flex-col items-center justify-between py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
 
       {/* Header */}
       <header
@@ -33,24 +42,33 @@ export default function Hero() {
         `}
       >
         <div className="text-xs sm:text-sm font-light tracking-widest">
-          Dyal Thakur
+          Dyal Swaroop
         </div>
-        <Cloud size={18} className="text-black" />
-        <button
-          className="text-xs sm:text-sm font-light tracking-widest hover:opacity-60 transition-opacity"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          MENU
-        </button>
+        <Cloud size={18} className="text-black dark:text-white" />
+        <div className="flex items-center gap-4">
+          <button
+            onClick={toggleTheme}
+            className="text-black dark:text-white hover:opacity-60 transition-opacity p-1"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
+          <button
+            className="text-xs sm:text-sm font-light tracking-widest hover:opacity-60 transition-opacity"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            MENU
+          </button>
+        </div>
       </header>
 
       {/* Mobile nav overlay */}
       {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-10">
+        <div className="fixed inset-0 z-40 bg-white dark:bg-black flex flex-col items-center justify-center gap-10 transition-colors duration-300">
           <button
             onClick={() => setMenuOpen(false)}
-            className="absolute top-8 right-6 text-xs tracking-widest font-light"
+            className="absolute top-8 right-6 text-xs tracking-widest font-light text-black dark:text-white"
           >
             CLOSE
           </button>
@@ -59,7 +77,7 @@ export default function Hero() {
               key={item}
               href={`#${item.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
-              className="text-3xl sm:text-4xl font-light tracking-widest hover:opacity-60 transition-opacity"
+              className="text-3xl sm:text-4xl font-light tracking-widest hover:opacity-60 transition-opacity text-black dark:text-white"
             >
               {item}
             </a>
@@ -82,7 +100,7 @@ export default function Hero() {
               `}
             >
               VIDEO EDITOR
-              <span className="w-6 sm:w-10 md:w-14 h-px bg-black inline-block align-middle shrink-0"></span>
+              <span className="w-6 sm:w-10 md:w-14 h-px bg-black dark:bg-white inline-block align-middle shrink-0"></span>
             </span>
 
             {/* Line 2 */}
@@ -94,7 +112,7 @@ export default function Hero() {
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
               `}
             >
-              <span className="w-6 sm:w-10 md:w-14 h-px bg-black inline-block align-middle shrink-0"></span>
+              <span className="w-6 sm:w-10 md:w-14 h-px bg-black dark:bg-white inline-block align-middle shrink-0"></span>
               MOTION DESIGNER
             </span>
 
@@ -107,7 +125,7 @@ export default function Hero() {
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
               `}
             >
-              <span className="w-6 sm:w-10 md:w-14 h-px bg-black inline-block align-middle shrink-0"></span>
+              <span className="w-6 sm:w-10 md:w-14 h-px bg-black dark:bg-white inline-block align-middle shrink-0"></span>
               STORYTELLER
             </span>
 
