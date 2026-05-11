@@ -48,10 +48,10 @@ export default function MyApproach() {
         {/* OPENING QUOTE */}
         <div className="ap-quote">
           <p className="ap-quote-line1">
-            I believe that great content alone is not enough —
+            Most marketers list skills. Top 1% operators sell —
           </p>
           <p className="ap-quote-line2">
-            it needs strategy, data, and storytelling.
+            outcomes, systems, and proof of thinking.
           </p>
         </div>
 
@@ -113,8 +113,9 @@ export default function MyApproach() {
         {/* CLOSING */}
         <div className="ap-closing">
           <p>
-            By combining analytics with creativity, I help brands create content
-            that not only looks good but also delivers real results.
+            I don&apos;t run campaigns. I design growth infrastructure — combining
+            analytics with creativity to build systems that generate leads,
+            sales, and predictable growth.
           </p>
         </div>
       </div>

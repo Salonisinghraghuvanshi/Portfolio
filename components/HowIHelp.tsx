@@ -5,38 +5,31 @@ import { useEffect, useRef, type CSSProperties } from 'react'
 const services = [
   {
     number: '01',
-    title: 'Creating High-Retention Video Content',
+    title: 'Acquisition Systems',
     accent: '#FF2020',
     description:
-      'I edit and structure videos for platforms like Instagram Reels, YouTube Shorts, and long-form content so that viewers stay engaged and watch longer.',
+      'Meta Ads funnels (Cold → Warm → Conversion), landing page conversion flows, lead capture architecture, and audience targeting + retargeting.',
   },
   {
     number: '02',
-    title: 'Social Media Growth Strategy',
+    title: 'Content-to-Conversion Systems',
     accent: '#E1306C',
     description:
-      'I design content strategies that help brands grow their audience organically by focusing on storytelling, consistency, and audience psychology.',
+      'Viral short-form content strategy, content repurposing pipelines, audience growth loops, and Instagram + LinkedIn growth systems.',
   },
   {
     number: '03',
-    title: 'Data-Driven Decision Making',
+    title: 'Revenue Systems',
     accent: '#0A66C2',
     description:
-      'Using analytics and performance metrics, I analyze which content works best and optimize future strategies for better results.',
+      'Email marketing funnels (Mailchimp), lead nurturing sequences, retargeting frameworks, and A/B testing + conversion optimization.',
   },
   {
     number: '04',
-    title: 'Content Repurposing',
+    title: 'Optimization Systems',
     accent: '#FF2020',
     description:
-      'I convert long content into multiple short-form pieces to increase reach across platforms.',
-  },
-  {
-    number: '05',
-    title: 'Marketing and Brand Visibility',
-    accent: '#E1306C',
-    description:
-      'I help businesses improve visibility through social media campaigns, competitor analysis, and strategic content planning.',
+      'KPI tracking (CPL, CPA, ROAS), A/B testing frameworks, funnel performance audits, and performance improvement loops.',
   },
 ]
 
@@ -76,21 +69,20 @@ export default function HowIHelp() {
         <header className="hiw-header">
           <div className="hiw-eyebrow">
             <span className="hiw-dot" />
-            Services
+            Growth Systems
           </div>
 
           <h2 className="hiw-title">
-            How I Help
+            How I Build
             <br />
-            People
+            Growth Systems
           </h2>
 
           <p className="hiw-sub">
-            I help individuals, startups, and businesses grow their digital
-            presence and improve their content performance.
+            I help startups and personal brands grow using funnels, performance marketing, and content systems powered by data + psychology.
           </p>
           <p className="hiw-sub hiw-sub--em">
-            My main goal: turn ideas into impactful content and measurable growth.
+            I don&apos;t just create content — I design systems that generate leads, sales, and predictable growth.
           </p>
         </header>
 
@@ -126,12 +118,12 @@ export default function HowIHelp() {
         <div className="hiw-approach">
           <p className="hiw-approach-label">My approach is always a mix of</p>
           <h3 className="hiw-approach-headline">
-            <span style={{ color: '#FF2020' }}>Creativity</span>
+            <span style={{ color: '#FF2020' }}>Systems</span>
             <span className="hiw-plus"> + </span>
-            <span style={{ color: '#0A66C2' }}>Analytics</span>
+            <span style={{ color: '#0A66C2' }}>Outcomes</span>
           </h3>
           <p className="hiw-approach-sub">
-            Which helps businesses grow faster and more effectively.
+            I don&apos;t run campaigns. I design growth infrastructure.
           </p>
         </div>
       </div>

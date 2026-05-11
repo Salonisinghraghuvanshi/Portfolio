@@ -5,9 +5,9 @@ import { Camera, Cloud, Moon, Sun } from 'lucide-react'
 import { useTheme } from '@/context/ThemeContext'
 
 const NAV_ITEMS = [
-  { label: 'PORTFOLIO',  href: '#portfolio'  },
-  { label: 'CONTACT',    href: '#contact'    },
-  { label: 'MARKETING',  href: '#marketing'  },
+  { label: 'CASE STUDIES', href: '#case-studies' },
+  { label: 'SERVICES',     href: '#skills'     },
+  { label: 'CONTACT',      href: '#contact'      },
 ]
 
 export default function Hero() {
@@ -129,21 +129,74 @@ export default function Hero() {
           <h1 className="font-light tracking-tight leading-tight">
 
             <span className={`flex items-center justify-center gap-2 sm:gap-3 text-[clamp(1.75rem,8vw,5rem)] transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              VIDEO EDITOR
-              <span className="w-6 sm:w-10 md:w-14 h-px bg-black dark:bg-white inline-block align-middle shrink-0" />
+              GROWTH &amp;
             </span>
 
             <span className={`flex items-center justify-center gap-2 sm:gap-3 text-[clamp(1.75rem,8vw,5rem)] transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <span className="w-6 sm:w-10 md:w-14 h-px bg-black dark:bg-white inline-block align-middle shrink-0" />
-              MOTION DESIGNER
+              FUNNEL
             </span>
 
             <span className={`flex items-center justify-center gap-2 sm:gap-3 text-[clamp(1.75rem,8vw,5rem)] transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <span className="w-6 sm:w-10 md:w-14 h-px bg-black dark:bg-white inline-block align-middle shrink-0" />
-              STORYTELLER
+              STRATEGIST
             </span>
 
           </h1>
+        </div>
+      </div>
+
+      {/* ── CTA Buttons ── */}
+      <div className={`w-full flex flex-col sm:flex-row items-center justify-center gap-4 max-w-7xl mx-auto mb-8 transition-all duration-500 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+      }`}>
+        <a
+          href="#case-studies"
+          onClick={(e) => { e.preventDefault(); handleNavClick('#case-studies') }}
+          className="px-7 py-3 rounded-full font-semibold text-sm tracking-wider text-white transition-all duration-300"
+          style={{
+            background: '#FF2020',
+            transform: isVisible ? 'translateY(0)' : 'translateY(8px)',
+          }}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget as HTMLAnchorElement
+            el.style.transform = 'translateY(-3px)'
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget as HTMLAnchorElement
+            el.style.transform = 'translateY(0)'
+          }}
+        >
+          → View Case Studies
+        </a>
+        <a
+          href="#letsbuild"
+          onClick={(e) => { e.preventDefault(); handleNavClick('#contact') }}
+          className="px-7 py-3 rounded-full font-semibold text-sm tracking-wider transition-all duration-300 bg-transparent border text-black dark:text-white border-gray-300 dark:border-gray-700 hover:border-gray-500 dark:hover:border-gray-400"
+          onMouseEnter={(e) => {
+            const el = e.currentTarget as HTMLAnchorElement
+            el.style.transform = 'translateY(-3px)'
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget as HTMLAnchorElement
+            el.style.transform = 'translateY(0)'
+          }}
+        >
+          → Let&apos;s Build Growth
+        </a>
+      </div>
+
+      {/* ── Expertise Tags ── */}
+      <div className={`w-full flex items-center justify-center max-w-7xl mx-auto mb-12 transition-all duration-500 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+      }`}>
+        <div className="flex flex-wrap gap-2 justify-center">
+          {['Growth Strategy', 'Lead Generation', 'Meta Ads', 'Funnel Design', 'Email Marketing', 'Content Systems'].map((tag) => (
+            <span
+              key={tag}
+              className="px-3 py-1 text-xs tracking-widest uppercase border border-gray-300 dark:border-gray-700 rounded-full text-gray-600 dark:text-gray-400 bg-white dark:bg-black"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
 

@@ -22,7 +22,7 @@ export default function WorkTogether() {
 
   return (
     <>
-      <section className="wt-root" ref={sectionRef}>
+      <section id="letsbuild" className="wt-root" ref={sectionRef}>
         <div className="wt-orb o1" />
         <div className="wt-orb o2" />
         <div className="wt-orb o3" />
@@ -38,7 +38,7 @@ export default function WorkTogether() {
 
           {/* heading */}
           <h2 className="wt-title">
-            Let's Work<br />Together!
+            Let's Build<br />Growth.
           </h2>
 
           {/* video */}
@@ -55,14 +55,28 @@ export default function WorkTogether() {
             </div>
           </div>
 
+          {/* supporting line */}
+          <p style={{
+            fontSize: 14,
+            color: 'rgba(237,240,247,0.55)',
+            fontWeight: 400,
+            maxWidth: 420,
+            lineHeight: 1.65,
+            margin: 0,
+            textAlign: 'center',
+          }}>
+            If you're a startup or brand looking for predictable lead generation,
+            funnel-based growth, and performance-driven marketing — let's work together.
+          </p>
+
           {/* availability chip */}
           <div className="wt-avail">
             <span className="wt-avail-dot" />
-            Available for freelance &amp; collaborations
+            Available for global clients &amp; consulting
           </div>
 
           {/* WhatsApp CTA — same as SocialShowcase wa-btn */}
-          <a
+          <a id='contact'
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"

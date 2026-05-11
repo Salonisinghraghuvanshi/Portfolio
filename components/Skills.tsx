@@ -4,54 +4,54 @@ import React, { useEffect, useRef } from 'react'
 
 const skillCategories = [
   {
-    title: 'Video Editing & Content Creation',
+    title: 'Growth & Performance Marketing',
     accent: '#FF2020',
     skills: [
-      'Short-form video editing (Reels, Shorts)',
-      'Long-form YouTube editing',
-      'Podcast clip creation',
-      'Storytelling and hook creation',
-      'Content repurposing strategies',
-      'Audience retention optimization',
+      'Meta Ads (Cold → Warm → Conversion)',
+      'Funnel Strategy & Design',
+      'Lead Generation Systems',
+      'Conversion Optimization',
+      'Retargeting Campaigns',
+      'A/B Testing Frameworks',
     ],
   },
   {
-    title: 'Social Media Strategy & Marketing',
+    title: 'Content Systems & Branding',
     accent: '#E1306C',
     skills: [
-      'Instagram growth strategies',
-      'YouTube content optimization',
-      'Content planning and scheduling',
-      'Social media campaign strategy',
-      'Audience engagement techniques',
-      'Lead generation through content',
+      'Short-form Content Strategy',
+      'Hook Engineering',
+      'Personal Branding',
+      'Content Repurposing Engine',
+      'Storytelling & Viral Design',
+      'Instagram + YouTube Growth',
     ],
   },
   {
-    title: 'Data Analysis & Analytics',
+    title: 'Data, Analytics & Automation',
     accent: '#0A66C2',
     skills: [
-      'Excel dashboards and reporting',
-      'SQL for data management',
-      'Data visualization and insights',
-      'KPI tracking',
-      'Market research',
-      'Competitor analysis',
+      'Google Analytics & KPI Tracking',
+      'Funnel Performance Audits',
+      'Email Funnels (Mailchimp)',
+      'CRM Workflows',
+      'LinkedIn Outreach Systems',
+      'SEO Optimization',
     ],
   },
 ]
 
 const tools = [
+  { label: 'Meta Ads Manager', accent: '#FF2020' },
+  { label: 'Mailchimp', accent: '#E1306C' },
+  { label: 'Google Analytics', accent: '#0A66C2' },
+  { label: 'Instagram Insights', accent: '#E1306C' },
+  { label: 'LinkedIn Outreach', accent: '#0A66C2' },
   { label: 'Adobe Premiere Pro', accent: '#FF2020' },
   { label: 'CapCut', accent: '#E1306C' },
-  { label: 'DaVinci Resolve', accent: '#0A66C2' },
   { label: 'Canva', accent: '#FF2020' },
-  { label: 'YouTube Studio', accent: '#FF2020' },
-  { label: 'Instagram Insights', accent: '#E1306C' },
-  { label: 'Google Analytics', accent: '#0A66C2' },
-  { label: 'Meta Business Suite', accent: '#0A66C2' },
-  { label: 'Excel', accent: '#0A66C2' },
-  { label: 'Notion', accent: '#E1306C' },
+  { label: 'Notion', accent: '#0A66C2' },
+  { label: 'Excel / Dashboards', accent: '#0A66C2' },
 ]
 
 export default function Skills() {
@@ -77,7 +77,7 @@ export default function Skills() {
   }, [])
 
   return (
-    <section className="sk-root" ref={sectionRef} id="skills">
+    <section  className="sk-root" ref={sectionRef} id="skills">
       <div className="sk-orb o1" />
       <div className="sk-orb o2" />
       <div className="sk-orb o3" />
@@ -94,12 +94,11 @@ export default function Skills() {
           <h2 className="sk-title">
             Skills &amp;
             <br />
-            Knowledge
+            Systems
           </h2>
 
           <p className="sk-sub">
-            Experience across video editing, marketing, analytics, and social
-            media growth — applied together for maximum impact.
+            Capabilities grouped by business function — not by tool. Each skill set is designed to move clients from attention to revenue.
           </p>
         </header>
 

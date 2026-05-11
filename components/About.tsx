@@ -3,25 +3,20 @@
 import { useEffect, useRef } from 'react'
 
 const words = [
-  { text: 'VIDEO', accent: null },
-  { text: 'EDITOR', accent: null },
+  { text: 'GROWTH', accent: '#FF2020' },
+  { text: '&', accent: null },
+  { text: 'FUNNEL', accent: null },
+  { text: 'STRATEGIST', accent: '#E1306C' },
   { text: '|', accent: null },
-  { text: 'CREATIVE', accent: '#FF2020' },
-  { text: 'DIRECTOR', accent: null },
-  { text: '|', accent: null },
-  { text: 'SHORT-FORM', accent: '#E1306C' },
-  { text: 'CONTENT', accent: null },
-  { text: 'SPECIALIST', accent: null },
-  { text: '|', accent: null },
-  { text: 'HELPING', accent: null },
-  { text: 'BRANDS', accent: null },
-  { text: 'AND', accent: null },
-  { text: 'CREATORS', accent: null },
-  { text: 'GROW', accent: '#0A66C2' },
-  { text: 'WITH', accent: null },
-  { text: 'HIGH-IMPACT', accent: null },
-  { text: 'VIDEO', accent: null },
-  { text: 'CONTENT.', accent: null },
+  { text: 'I', accent: null },
+  { text: 'BUILD', accent: null },
+  { text: 'MARKETING', accent: '#0A66C2' },
+  { text: 'SYSTEMS', accent: null },
+  { text: 'THAT', accent: null },
+  { text: 'TURN', accent: null },
+  { text: 'ATTENTION', accent: '#FF2020' },
+  { text: 'INTO', accent: null },
+  { text: 'REVENUE.', accent: null },
 ]
 
 export default function About() {
@@ -84,8 +79,8 @@ export default function About() {
           {/* stats row */}
           <div className="ab-stats">
             {[
-              { value: '6+', label: 'Years Experience', accent: '#FF2020' },
-              { value: 'Top 1%', label: 'Creator Networks', accent: '#E1306C' },
+              { value: '3+', label: 'Years Experience', accent: '#FF2020' },
+              { value: '9.7K+', label: 'Instagram Audience', accent: '#E1306C' },
               { value: '100+', label: 'Projects Delivered', accent: '#0A66C2' },
             ].map((s, i) => (
               <div

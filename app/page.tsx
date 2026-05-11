@@ -4,15 +4,16 @@ import { useEffect, useState } from 'react'
 import Intro from '@/components/Intro'
 import Hero from '@/components/Hero'
 import Introduction from '@/components/introduction'
+import ImpactNumbers from '@/components/ImpactNumbers'
+import About from '@/components/About'
+import CaseStudies from '@/components/CaseStudies'
 import HowIHelp from '@/components/HowIHelp'
-import Education from '@/components/Education'
 import Skills from '@/components/Skills'
 import MyApproach from '@/components/MyApproach'
-import VideoGrid from '@/components/VideoGrid'
-import About from '@/components/About'
+import HowIThink from '@/components/HowIThink'
 import WorkTogether from '@/components/WorkTogether'
-import SocialShowcase from '@/components/socialMedia'
 import PageLoader from '@/components/PageLoader'
+import VideoGrid from '@/components/VideoGrid'
 
 // ── Scroll-to-top button ───────────────────────────────────────────────────
 function ScrollToTop({ visible }: { visible: boolean }) {
@@ -107,13 +108,14 @@ export default function Page() {
       }`}>
         <Hero />
         <Introduction />
+        <ImpactNumbers />
+        <About />
+        <CaseStudies />
         <HowIHelp />
-        <Education />
         <Skills />
         <MyApproach />
-        <VideoGrid />
-        <About />
-        <SocialShowcase />
+        <VideoGrid/>
+        <HowIThink />
         <WorkTogether />
       </main>
 

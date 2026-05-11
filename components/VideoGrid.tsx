@@ -24,15 +24,15 @@ const videos: Video[] = [
     id: 2,
     title: 'REAL STATE COMMERCIAL VIDEO',
     description: 'VIDEO EDITING & MOTION DESIGN',
-    src: 'https://res.cloudinary.com/dnuvogfln/video/upload/v1772881607/copy_1925A47A-A58C-4077-B16D-F41B86835EE0_uav00g.mov',
+    src: 'https://res.cloudinary.com/dbcxbzqr5/video/upload/v1778518826/copy_1925A47A-A58C-4077-B16D-F41B86835EE0_1_rfajjb.mov',
     position: 'right',
     accent: '#E1306C',
   },
   {
     id: 3,
-    title: 'BRAND PORMOTION VIDEO',
-    description: 'AI CONTENT CREATION',
-    src: 'https://res.cloudinary.com/dnuvogfln/video/upload/v1772881381/copy_935D9E68-8C3B-42BF-8B2F-66F5DE1C59FB_x3ndik.mov',
+    title: 'Social Media Content',
+    description: 'Editing',
+    src: 'https://res.cloudinary.com/dbcxbzqr5/video/upload/v1778520823/B1ED31ED-FEA6-4B06-89E5-57C834FE57D4_s8uarn.mp4',
     position: 'center',
     accent: '#0A66C2',
   },
@@ -40,7 +40,7 @@ const videos: Video[] = [
     id: 1,
     title: 'STARTUP PITCH VIDEO',
     description: 'MOTION DESIGN',
-    src: 'https://res.cloudinary.com/dnuvogfln/video/upload/v1772881443/prototype-H_ik19zo.mp4',
+    src: 'https://res.cloudinary.com/dbcxbzqr5/video/upload/v1778518520/copy_935D9E68-8C3B-42BF-8B2F-66F5DE1C59FB_1_bdc16p.mov',
     position: 'left',
     accent: '#FF2020',
   },
@@ -48,7 +48,7 @@ const videos: Video[] = [
     id: 4,
     title: 'BRAND PORTFOLIO VIDEO',
     description: 'STORY TELLING | EXPLAINATION',
-    src: 'https://res.cloudinary.com/dnuvogfln/video/upload/v1772883496/video_1_e1te4m.mp4',
+    src: 'https://res.cloudinary.com/dbcxbzqr5/video/upload/v1778518947/prototype-H_1_unttp0.mp4',
     position: 'right',
     accent: '#FF2020',
   },
@@ -56,7 +56,7 @@ const videos: Video[] = [
     id: 5,
     title: 'MARKETING CONTENT',
     description: 'AI VIDEO CREATION',
-    src: 'https://res.cloudinary.com/dnuvogfln/video/upload/v1772883514/copy_C0774FF6-0902-4AC4-82E9-9445EB821455_kewobn.mp4',
+    src: 'https://res.cloudinary.com/dbcxbzqr5/video/upload/v1778519336/copy_23247E1E-E520-46B2-8758-480B42951D46_zt4w8l.mov',
     position: 'center',
     accent: '#E1306C',
   },
@@ -257,8 +257,8 @@ export default function VideoGrid() {
           </div>
 
           {/* ── PORTFOLIO BUTTON ── */}
-          {/* <div className="vg-cta-wrap">
-            <a href="#portfolio-section" className="vg-cta-btn">
+          <div className="vg-cta-wrap">
+            <a href="https://drive.google.com/drive/folders/1bI566Czcyoybh7JAnnm5v4SXsyw07Ot0" className="vg-cta-btn">
               View Full Portfolio
               <svg
                 width="16"
@@ -271,7 +271,7 @@ export default function VideoGrid() {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-          </div> */}
+          </div> 
         </div>
 
         {/* ── MODAL ── */}
